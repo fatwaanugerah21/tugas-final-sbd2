@@ -12,17 +12,17 @@ def index():
     return render_template("index.html")
 
 # todo routes
-@api.route('/news/', methods=['GET'])
+@api.route('/news', methods=['GET'])
 def get_news():
     return jsonify(news.find({})), 200
 
 
-@api.route('/news/<string:news_id>/', methods=['GET'])
+@api.route('/news/<string:news_id>', methods=['GET'])
 def get_task(news_id):
     return news.find_by_id(news_id), 200
 
 
-@api.route('/news/', methods=['POST'])
+@api.route('/news', methods=['POST'])
 def add_news():
     title = request.json.get('title')
     writer = request.json.get('writer')
@@ -31,7 +31,7 @@ def add_news():
     return response, 201
 
 
-@api.route('/news/<string:news_id>/', methods=['PUT'])
+@api.route('/news/<string:news_id>', methods=['PUT'])
 def update_news(news_id):
     title = request.json.get('title')
     writer = request.json.get('writer')
@@ -40,13 +40,13 @@ def update_news(news_id):
     return response, 201
 
 
-@api.route('/news/<string:news_id>/', methods=['DELETE'])
+@api.route('/news/<string:news_id>', methods=['DELETE'])
 def delete_news(news_id):
     news.delete(news_id)
     return "Record Deleted"
 
 app.register_blueprint(api)
-CORS(app)
+# CORS(app)
 
 if __name__ == '__main__':
     app.run(debug=True)
