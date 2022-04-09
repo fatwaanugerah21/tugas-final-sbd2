@@ -1,24 +1,24 @@
-import AdminLoginForm from '@components/pages/admin-login/admin-login-form'
+import AdminSignupForm from '@components/pages/admin-login/admin-signup-form'
 import Typography from '@components/widget/Typography'
 import { ROUTES } from '@utils/routes'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import React from 'react'
 
-interface IAdminLoginProps {}
+interface IAdminSignupProps {}
 
-const AdminLogin: NextPage<IAdminLoginProps> = ({ ...props }) => {
+const AdminSignup: NextPage<IAdminSignupProps> = ({ ...props }) => {
   return (
     <div
       className={`flex h-screen flex-col items-center justify-center space-y-5 bg-gray-300`}
     >
-      <AdminLoginForm />
+      <AdminSignupForm />
 
       <div className="flex space-x-1">
-        <Typography text="Tidak punya akun?" />
+        <Typography text="Sudah punya akun?" />
         <Link href={ROUTES.admin_signup}>
           <Typography
-            text="Signup"
+            text="Login"
             className={`cursor-pointer text-blue-500 hover:text-blue-700`}
           />
         </Link>
@@ -26,4 +26,4 @@ const AdminLogin: NextPage<IAdminLoginProps> = ({ ...props }) => {
     </div>
   )
 }
-export default AdminLogin
+export default AdminSignup

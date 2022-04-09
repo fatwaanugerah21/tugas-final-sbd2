@@ -10,19 +10,21 @@ class User(object):
         self.collection_name = 'users'
 
         self.fields = {
+            "firstname": "string",
+            "lastname": "string",
             "username": "string",
             "password": "string",
             "created": "datetime",
             "updated": "datetime",
         }
 
-        self.create_required_fields = ["username", "password"]
+        self.create_required_fields = ["firstname", "lastname", "username", "password"]
 
         # Fields optional for CREATE
         self.create_optional_fields = []
 
         # Fields required for UPDATE
-        self.update_required_fields = ["username", "password"]
+        self.update_required_fields = ["firstname", "lastname", "username", "password"]
 
         # Fields optional for UPDATE
         self.update_optional_fields = []

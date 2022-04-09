@@ -5,7 +5,7 @@ interface IFormProps extends React.HTMLAttributes<HTMLFormElement> {}
 const Form: React.FC<IFormProps> = ({ onSubmit, children, ...props }) => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (onSubmit) onSubmit(e as any)
+    if (onSubmit) onSubmit(e)
   }
 
   return (
