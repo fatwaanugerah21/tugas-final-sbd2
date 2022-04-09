@@ -1,4 +1,4 @@
-import AdminLoginForm from '@components/pages/admin-login/form'
+import AdminLoginForm from '@components/pages/admin-login/admin-login-form'
 import { NextPage } from 'next'
 import React from 'react'
 
